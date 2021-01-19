@@ -6,8 +6,7 @@ import javax.swing.*;
 
 /*TODO 
 
-mazegen
-Solver
+Solver kinda
 Swing render
 Save//Load of maze
 
