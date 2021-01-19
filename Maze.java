@@ -7,6 +7,7 @@ import javax.swing.*;
 
 solver button - show solve path onclick
 Save//Load of maze
+comments
 
 */
 
