@@ -11,7 +11,9 @@ public class MazeGen {
         this.size = size;
         this.map = new int[size][size];
         generateMaze(0, 0);
+
         mn.solve(0, map, size);
+
     }
 
     private void generateMaze(int x, int y) {
@@ -20,7 +22,7 @@ public class MazeGen {
         for (Direction dir : dirs) {
             int nx = x + dir.getX();
             int ny = y + dir.getY();
-            if (insideMap(ny, nx) && map[ny][nx] == 0) {
+            if (insideMap(nx, ny) && map[ny][nx] == 0) {
                 map[y][x] |= dir.getBit();
                 map[ny][nx] |= dir.opposite.getBit();
                 generateMaze(nx, ny);
@@ -29,7 +31,7 @@ public class MazeGen {
     }
 
     private boolean insideMap(int x, int y) {
-        return (y >= 0 && y < this.size && x >= 0 && x < this.size);
+        return (x >= 0 && x < this.size && y >= 0 && y < this.size);
     }
 
     public int[][] getMap() {
