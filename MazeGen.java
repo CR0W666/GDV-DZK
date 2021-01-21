@@ -7,13 +7,13 @@ public class MazeGen {
     private int size;
     private int[][] map;
 
-    public MazeGen(int size, MazeNav mn) {
+    public MazeGen(int size) {
         this.size = size;
         this.map = new int[size][size];
+    }
+
+    public void startGen() {
         generateMaze(0, 0);
-
-        mn.solve(0, map, size);
-
     }
 
     private void generateMaze(int x, int y) {
